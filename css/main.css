@@ -8,7 +8,7 @@ body {
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     margin:0;
 }
 
@@ -162,13 +162,17 @@ img {
     text-decoration: none;/*去掉超链接的下划线*/
 }
 
+.main-promote {
+    background-color: #dedede;
+}
+
 .main-promote .cat { 
     background-color: #6e6568;
     color: #fff;
 }
 
 .main-promote .cat .item {
-     padding: 14px 20px;
+     padding: 20px 20px;
 }
 
 .main-promote .cat .item:hover{
@@ -177,6 +181,8 @@ img {
 
 .main-promote .info {
     padding: 10px;
+    width: 19%;
+    margin-left: 1%;
     box-sizing: border-box;
     background-color: #fff;
     line-height: 50px; /* 文字高度适中 */
@@ -195,4 +201,37 @@ img {
 
 .main-promote .info .anno {
     line-height: 1.7; /* 文字高度适中 */
+}
+
+.categrey-promote .title {
+    font-size: 22px;
+    padding: 5px 0;
+}
+
+.categrey-promote .title:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 5px;
+    height: 25px;
+    margin-right: 10px;
+    background-color: #db182b;
+}
+
+.categrey-promote .item {
+    box-sizing: border-box;
+    padding:5px;
+}
+
+.categrey-promote .item .card {
+    height: 300px;
+    background-color: #ccc;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #eee;
+    color: #999;
 }
