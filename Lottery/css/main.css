@@ -4,6 +4,21 @@ html, body {
     background-color: #eee;
 }
 
+.candidate-pool {
+    height: 80%;
+}
+
+.options {
+    height: 20%;
+}
+
+.options .btn-group {
+    position: relative;
+    float: right;
+    right: 50px;
+    top: 10px;
+}
+
 .tag-cloud {
     display: block;
     margin: 0 auto;

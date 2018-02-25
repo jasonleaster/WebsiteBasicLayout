@@ -22,7 +22,20 @@
             outlineColour: '#ff00ff',
             reverse: true,
             depth: 0.8,
-            maxSpeed: 0.05
+            speed: 0.1
+        });
+
+        var vOptionsCtx = new Vue({
+            el: '#options',
+            data: {
+                selected: 30,
+                running: false,
+                btns: [
+                    30, 10, 5, 2, 1
+                ]
+            },
+            ready: function(){
+            },
         });
 
     };
