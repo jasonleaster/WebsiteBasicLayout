@@ -22,15 +22,21 @@
             <p>Anything in here will be replaced on browsers that support the canvas element</p>
         </canvas>
     </div>
+
+    <div id="result" class="result"></div>
+
     <div id="options" class="options">
         <div class="btn-group">
-            <button class="btn btn-primary" v-for="value in btns">{{value}}</button>
+            <button class="btn btn-primary"
+                    v-for="value in btns"
+                    v-on:click="changeSpeed(value)"
+                    >{{value}}</button>
             <button class="btn btn-success">开始</button>
             <button class="btn btn-warning">重置</button>
         </div>
     </div>
 
-    <div id="result" class="result"></div>
+    
 </body>
 
 </html>

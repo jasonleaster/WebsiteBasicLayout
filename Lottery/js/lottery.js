@@ -13,18 +13,6 @@
             return html.join('');
         };
 
-        var myCanvas = document.getElementById("myCanvas");
-        myCanvas.innerHTML = tagsHtmlBuilder();
-
-        TagCanvas.Start('myCanvas', '', {
-            textColour: '#ff0000',
-            textHeight: 14,
-            outlineColour: '#ff00ff',
-            reverse: true,
-            depth: 0.8,
-            speed: 0.1
-        });
-
         var vOptionsCtx = new Vue({
             el: '#options',
             data: {
@@ -34,7 +22,27 @@
                     30, 10, 5, 2, 1
                 ]
             },
-            ready: function(){
+            mounted: function() {
+                var myCanvas = document.getElementById("myCanvas");
+                myCanvas.innerHTML = tagsHtmlBuilder();
+
+                TagCanvas.Start('myCanvas', '', {
+                    textColour: '#ff0000',
+                    textHeight: 14,
+                    outlineColour: '#ff00ff',
+                    reverse: true,
+                    depth: 0.8,
+                    speed: 0.1
+                });
+            },
+            methods: {
+                changeSpeed: function(speed) {
+                    TagCanvas.SetSpeed('myCanvas', [speed, 1]);
+                    TagCanvas.Reload('myCanvas');
+                },
+                resetHandler: function() {
+
+                }
             },
         });
 
