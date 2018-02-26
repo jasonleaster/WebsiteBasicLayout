@@ -31,8 +31,10 @@
                     v-for="value in btns"
                     v-on:click="changeSpeed(value)"
                     >{{value}}</button>
-            <button class="btn btn-success">开始</button>
-            <button class="btn btn-warning">重置</button>
+            <button class="btn btn-success"
+                    v-on:click="startLottery">开始</button>
+            <button class="btn btn-warning"
+                    v-on:click="stopLottery">停止</button>
         </div>
     </div>
 

@@ -37,8 +37,19 @@
             },
             methods: {
                 changeSpeed: function(speed) {
-                    TagCanvas.SetSpeed('myCanvas', [speed, 1]);
+                    TagCanvas.SetSpeed('myCanvas', [speed, speed]);
                     TagCanvas.Reload('myCanvas');
+                },
+                startLottery: function () {
+                    debugger;
+                    this.changeSpeed(20);
+                    $("#result").css('display','none');
+                    console.log('game started!');
+                },
+                stopLottery: function () {
+                    this.changeSpeed(0.1);
+                    $("#result").css('display','block');
+                    console.log('game stoped!');
                 },
                 resetHandler: function() {
 
