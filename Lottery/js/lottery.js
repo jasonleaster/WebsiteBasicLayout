@@ -16,7 +16,7 @@
         var vOptionsCtx = new Vue({
             el: '#options',
             data: {
-                selected: 30,
+                selected: 5,
                 running: false,
                 btns: [
                     30, 10, 5, 2, 1
@@ -41,7 +41,6 @@
                     TagCanvas.Reload('myCanvas');
                 },
                 startLottery: function () {
-                    debugger;
                     this.changeSpeed(20);
                     $("#result").css('display','none');
                     console.log('game started!');
@@ -57,5 +56,12 @@
             },
         });
 
+
+        var vResultCtx = new Vue({
+            el: '#result',
+            data : {
+                cards: vOptionsCtx.selected,
+            }
+        });
     };
 })();
