@@ -23,7 +23,7 @@
         </canvas>
     </div>
 
-    <div id="result" class="result">
+    <div id="result" class="result" v-show="finished">
         <div class="cardWrapper">
             <div class="card" v-for="(val, index) in results">
                 <div class="stick">
@@ -39,8 +39,10 @@
     <div id="options" class="options">
         <div class="btn-group">
             <button class="btn btn-primary"
-                    v-for="value in btns"
-                    v-on:click="changeSpeed(value)"
+                    v-bind:class="{ shadowBackground: selectedButton == index }" 
+                    v-for="(value, index) in btns"
+                    v-bind:key="index"
+                    v-on:click="changeCandidator(value, index)"
                     >{{value}}</button>
             <button class="btn btn-success"
                     v-on:click="startLottery">开始</button>

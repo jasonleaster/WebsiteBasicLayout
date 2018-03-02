@@ -23,6 +23,7 @@
             el: '#result',
             data : {
                 results: [],
+                finished: false,
             }
         });
 
@@ -34,6 +35,8 @@
                 btns: [
                     30, 10, 5, 2, 1
                 ],
+                selectedButton: -1,
+                candidators: 0,
                 results:[1,2,3],
             },
             mounted: function() {
@@ -54,20 +57,22 @@
                     TagCanvas.SetSpeed('myCanvas', [speed, speed]);
                     TagCanvas.Reload('myCanvas');
                 },
+                changeCandidator: function (candidators, selectedButton) {
+                    this.candidators = candidators;
+                    this.selectedButton = selectedButton;
+                },
                 startLottery: function () {
                     this.changeSpeed(20);
-                    $("#result").css('display','none');
-                    console.log('game started!');
+                    vResultCtx.finished = false;
                 },
                 stopLottery: function () {
                     vResultCtx.results = []
-                    for (var i = 0; i < 5; i++) {
+                    for (var i = 0; i < this.candidators; i++) {
                         vResultCtx.results.push(getRandomInt(0, 100));
                     }
 
                     this.changeSpeed(0.1);
-                    $("#result").css('display','block');
-                    console.log('game stoped!');
+                    vResultCtx.finished = true;
                 },
                 resetHandler: function() {
 
