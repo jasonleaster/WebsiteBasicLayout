@@ -7,21 +7,25 @@
             return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
         }
 
-        /*
-            动态创建tagcanvas需要的元素。
-         */
-        var tagsHtmlBuilder = function() {
-            var html = ['<ul>'];
-            for (var i = 0; i < 100; i++) {
-                html.push('<li><a href="#">' + i + '</a></li>');
+        var vCanvasCtx = new Vue({
+            el: '#myCanvas',
+            data: {
+                number: 100,
+            },
+            methods: {
+                range: function(max) {
+                    var array = [];
+                    for (var i = 0; i < max; i++) {
+                        array.unshift(i);
+                    }
+                    return array;
+                }
             }
-            html.push('</ul>');
-            return html.join('');
-        };
+        });
 
         var vResultCtx = new Vue({
             el: '#result',
-            data : {
+            data: {
                 results: [],
                 finished: false,
             }
@@ -35,13 +39,12 @@
                 btns: [
                     30, 10, 5, 2, 1
                 ],
-                selectedButton: -1,
+                selectedButton: 1,
                 candidators: 0,
-                results:[1,2,3],
+                results: [],
             },
             mounted: function() {
                 var myCanvas = document.getElementById("myCanvas");
-                myCanvas.innerHTML = tagsHtmlBuilder();
 
                 TagCanvas.Start('myCanvas', '', {
                     textColour: '#ff0000',
@@ -57,15 +60,15 @@
                     TagCanvas.SetSpeed('myCanvas', [speed, speed]);
                     TagCanvas.Reload('myCanvas');
                 },
-                changeCandidator: function (candidators, selectedButton) {
+                changeCandidator: function(candidators, selectedButton) {
                     this.candidators = candidators;
                     this.selectedButton = selectedButton;
                 },
-                startLottery: function () {
+                startLottery: function() {
                     this.changeSpeed(20);
                     vResultCtx.finished = false;
                 },
-                stopLottery: function () {
+                stopLottery: function() {
                     vResultCtx.results = []
                     for (var i = 0; i < this.candidators; i++) {
                         vResultCtx.results.push(getRandomInt(0, 100));
