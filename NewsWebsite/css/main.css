@@ -1,0 +1,170 @@
+img {
+    max-width: 100%;
+    height: 120px;
+    display: block;
+    border-radius: 3px;
+}
+
+a {
+    color: #444;
+}
+
+a, a:hover {
+    text-decoration: none;
+    /*去掉超链接的下划线*/
+}
+
+.logo {
+    background-image: url(../img/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+}
+
+
+
+
+/**
+ * 自定义一个类，用作父选择器，限定只修改局部的目标元素的样式
+ * 避免影响全局的类选择器样式
+ */
+
+.sidebar,
+.sidebar .list-group-item {
+    border: 0;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.sidebar .list-group-item.active {
+    background-color: #ea0c3d;
+}
+
+.news-list-item {
+    padding: 15px 0;
+    border-bottom: 2px solid #eee;
+    border-width: 80%;
+}
+
+.news-list-item:first-child {
+    padding-top: 0;
+}
+
+
+
+.news-list-item .title {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.news-list-item .title:hover {
+    color: #337ab7;
+}
+
+
+
+.news-list-item .info {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+
+
+.avatar img {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.side-bar-card {
+    margin-top: 10px;
+    background-color: #eee;
+    border: 5px solid transparent;
+}
+
+.side-bar-card .info {
+    margin-top: 13px;
+    font-weight: bold;
+}
+
+.side-bar-card img {
+    width: 100%;
+    height: 70px;
+}
+
+.side-bar-card .card-title {
+    padding: 3px 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card-body .list .item .title {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/*
+http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/
+ */
+.side-bar-card .card-body .list .item {
+    padding: 2px 0;
+    border-radius: 2px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.side-bar-card .card-body .list .item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.news-title {
+    line-height: 1.5;
+}
+
+.news-status {
+    padding: 2px;
+}
+
+.label {
+    opacity: 0.7;
+}
+
+.news-content img {
+    width: 400px;
+    height: 300px;
+    position: center;
+    margin: 10px auto;
+}
+
+.no-padding-h {
+        padding-right: 0;
+    padding-left: 0;
+}
+
+.side-bar-card .list .item img {
+    margin: 5px 0;
+}
+
+
+/**
+ * 页脚
+ */
+.footer {
+    margin-top: 30px;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #eee;
+    color: #999;
+}
+
+
+.container-small {
+    max-width: 500px;
+}
+
+.btn-primary, .btn-primary:hover{
+    background-color:  #ea0c3d;
+    border-color: #ea0c3d;
+}
